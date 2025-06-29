@@ -1,0 +1,288 @@
+/* ===================================
+   Reset & Base Styles
+=================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0c0c0c;
+  color: white;
+  line-height: 1.6;
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ===================================
+   Header & Navigation
+=================================== */
+header {
+  background: #1f1f1f;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  font-weight: 500;
+}
+
+/* ===== Hamburger Menu (Responsive) ===== */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 25px;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  content: '';
+  top: -8px;
+}
+
+.nav-toggle-label span::after {
+  content: '';
+  top: 8px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #1f1f1f;
+    width: 100%;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-toggle:checked ~ nav {
+    transform: translateY(0);
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===================================
+   Layout & Section Base
+=================================== */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #00bfff;
+}
+
+/* ===================================
+   About Section
+=================================== */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #00bfff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-section {
+  text-align: center;
+}
+
+/* ===================================
+   Skills Section
+=================================== */
+.skills-subtitle {
+  color: #00bfff;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.skill-card {
+  background: #1a1a1a;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #00bfff;
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+.skill-card:hover {
+  background: #00bfff;
+  color: #000;
+  transform: scale(1.05);
+  cursor: default;
+}
+
+/* ===================================
+   Certifications & Projects
+=================================== */
+.certifications {
+  display: grid;
+  gap: 1rem;
+}
+
+.cert-card {
+  background: #222;
+  padding: 1rem;
+  border-left: 5px solid #00bfff;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+}
+
+/* Special styling for portfolio project */
+.portfolio-project {
+  border-left: 5px solid #00bfff;
+}
+
+/* ===================================
+   Buttons
+=================================== */
+.btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: #00bfff;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+}
+
+/* ===================================
+   Footer
+=================================== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1f1f1f;
+  color: white;
+}
+/* Profile Image Highlight on Click */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #00bfff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Optional: subtle highlight on hover */
+.profile-img:hover {
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+/* Highlight on click */
+.profile-img:active {
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.8);
+  transform: scale(1.03);
+}
+.section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
